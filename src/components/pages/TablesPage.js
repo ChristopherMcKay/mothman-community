@@ -25,7 +25,7 @@ import {
  * App Client Initialization - Connect to Stitch!
  */
 
-loginAnonymous()
+
 
 const APP_ID = "blog-comments-rycnr";
 const app = Stitch.hasAppClient(APP_ID)
@@ -35,6 +35,9 @@ const app = Stitch.hasAppClient(APP_ID)
 /**
  * Authentication
  */
+
+
+
 
 // General Authentication Methods & Properties
 export async function loginAnonymous() {
@@ -113,6 +116,10 @@ const mongodb = app.getServiceClient(
 const comments = mongodb.db("blog").collection("comments");
 
 const myHook = () => {
+
+  loginAnonymous()
+
+  console.log(loginAnonymous())
 
   // Declare a new state variable, which we'll call "data", the second argument is the function that replaces setState()
   const [data, setData] = useState([]);
