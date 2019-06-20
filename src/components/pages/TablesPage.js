@@ -112,14 +112,22 @@ const mongodb = app.getServiceClient(
   "mongodb-atlas"
 );
 
+
+function displayCommentsOnLoad() {
+  app.auth
+    .loginWithCredential(new AnonymousCredential())
+    .then(console.log("authorized"))
+    .catch(console.error);
+}
+
+displayCommentsOnLoad()
+
+
 // Collection that contains blog documents
 const comments = mongodb.db("blog").collection("comments");
 
 const myHook = () => {
 
-  loginAnonymous()
-
-  console.log(loginAnonymous())
 
   // Declare a new state variable, which we'll call "data", the second argument is the function that replaces setState()
   const [data, setData] = useState([]);
