@@ -25,6 +25,8 @@ import {
  * App Client Initialization - Connect to Stitch!
  */
 
+loginAnonymous()
+
 const APP_ID = "blog-comments-rycnr";
 const app = Stitch.hasAppClient(APP_ID)
   ? Stitch.getAppClient(APP_ID)
